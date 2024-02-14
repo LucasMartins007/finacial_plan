@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import {
+  AbstractControl,
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +12,25 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginFormStyle: string = 'login-form';
-  loginFormGroup: FormGroup;
+  loginFormGroup = new UntypedFormGroup(
+    {
+      username: new UntypedFormControl('', { validators: Validators.required }),
+      password: new UntypedFormControl('', { validators: Validators.required }),
+    },
+    { validators: [] }
+  );
 
-  constructor(private formBuilder: FormBuilder) {
-    this.loginFormGroup = this.formBuilder.group({
-      username: [''],
-      senha: [''],
-    });
+  get username(): AbstractControl | null {
+    return this.loginFormGroup.get('username');
   }
 
-  ngOnInit(): void {}
+  get password(): AbstractControl | null {
+    return this.loginFormGroup.get('password');
+  }
+
+  constructor() {}
+
+  ngOnInit(): void {
+    console.log('');
+  }
 }
