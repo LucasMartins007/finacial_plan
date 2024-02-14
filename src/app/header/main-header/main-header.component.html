@@ -1,0 +1,25 @@
+<mat-toolbar class="main-header">
+  <mat-toolbar-row>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer-title"></span>
+    <span>Controle financeiro</span>
+    <span class="spacer-account"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>info</mat-icon>
+    <span>Meus Dados</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>keyboard_backspace</mat-icon>
+    <span>Sair</span>
+  </button>
+</mat-menu>
