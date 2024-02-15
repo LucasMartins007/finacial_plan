@@ -2,19 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30;
+  margin-top: 150;
 }
 
 .login-form {
-  margin-top: 20;
+  margin-top: 40;
 }
 
 .col {
-  margin-bottom: 10;
+  margin-bottom: 15;
 }
 
 .card-login {
-  background-color: #e5e2ff;
+  background-color: #c0d8fd;
   padding: 20;
 }
 
@@ -22,10 +22,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10;
+  margin-bottom: 20;
 }
 
 .enter-button {
-  min-width: 120;
+  min-width: 150;
   min-height: 40;
 }
 
