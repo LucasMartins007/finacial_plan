@@ -14,14 +14,16 @@ import {
 export class LoginComponent implements OnInit {
   loginFormGroup = new UntypedFormGroup(
     {
-      username: new UntypedFormControl('', { validators: Validators.required }),
+      email: new UntypedFormControl('', {
+        validators: [Validators.required, Validators.email],
+      }),
       password: new UntypedFormControl('', { validators: Validators.required }),
     },
     { validators: [] }
   );
 
-  get username(): AbstractControl | null {
-    return this.loginFormGroup.get('username');
+  get email(): AbstractControl | null {
+    return this.loginFormGroup.get('email');
   }
 
   get password(): AbstractControl | null {
